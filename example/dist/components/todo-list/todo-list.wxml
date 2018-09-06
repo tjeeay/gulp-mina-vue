@@ -1,0 +1,6 @@
+
+<todo-list-item
+  wx:for="{{todos}}"
+  wx:key="{{index}}"
+  item="{{item}}"
+></todo-list-item>

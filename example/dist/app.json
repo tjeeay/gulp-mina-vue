@@ -1,0 +1,9 @@
+{
+  "window": {
+    "navigationBarTitleText": "MINA VUE DEMO"
+  },
+  "pages": [
+    "pages/home/home",
+    "pages/todo/todo"
+  ]
+}

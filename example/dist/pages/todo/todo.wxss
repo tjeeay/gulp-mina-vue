@@ -1,0 +1,9 @@
+/* pages/todo/todo.wxss */
+.container {
+  padding: 15rpx 30rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+}

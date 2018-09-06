@@ -1,0 +1,19 @@
+/* pages/home/home.wxss */
+.container {
+  padding: 15rpx 30rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+}
+
+.desc {
+  font-size: 36rpx;
+}
+
+navigator {
+  color: blue;
+  text-decoration: underline;
+  margin-top: 50rpx;
+}

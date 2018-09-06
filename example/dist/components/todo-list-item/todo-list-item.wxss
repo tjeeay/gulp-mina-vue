@@ -1,0 +1,5 @@
+/* components/todo-list-item/todo-list-item.wxss */
+.item {
+  background: #fff;
+  margin: 15rpx 0;
+}

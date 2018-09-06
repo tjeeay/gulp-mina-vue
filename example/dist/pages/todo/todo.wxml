@@ -1,0 +1,5 @@
+
+<view class="container">
+  <view class="title">{{title}}</view>
+  <todo-list todos="{{todos}}"></todo-list>
+</view>
