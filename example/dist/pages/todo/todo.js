@@ -1,5 +1,7 @@
 
 export default Page({
+  $route: 'pages/todo/todo',
+
 
   data: {
     title: 'TODOs',

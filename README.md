@@ -9,7 +9,7 @@ $ npm i -D gulp-mina-vue
 
 ## Usage
 
-Below is just a simple demo, please refer [weapp-boilerplate](https://github.com/tjeeay/weapp-boilerplate) to see full usage.
+Below is just a simple demo, please refer [weapp-boilerplate](https://github.com/tjeeay/weapp-boilerplate) to see more usage in real project.
 
 ```js
 // gulpfile.js
