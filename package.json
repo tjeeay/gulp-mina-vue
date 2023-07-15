@@ -21,7 +21,7 @@
   "author": "Tee Jay <tjeeay@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "7.10.2",
     "babel-generator": "^6.26.1",
     "babel-types": "^6.26.0",
     "babelon": "^1.0.5",
