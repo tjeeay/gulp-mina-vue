@@ -16,8 +16,7 @@ Below is just a simple demo, please refer [weapp-boilerplate](https://github.com
 
 const gulp = require('gulp')
 const del = require('del')
-const minaVue = require('gulp-mina-vue');
-const runSequence = require('run-sequence')
+const minaVue = require('gulp-mina-vue')
 
 gulp.task('clean', _ => del('./dist/**/*.*'))
 
@@ -45,7 +44,7 @@ gulp.task('compile:MINA.json', _ => {
   .pipe(gulp.dest('./dist'))
 })
 
-gulp.task('copy', [], _ => {
+gulp.task('copy', _ => {
   return gulp.src([
     'src/**/*.*',
     '!src/**/*.vue'
@@ -53,14 +52,14 @@ gulp.task('copy', [], _ => {
   .pipe(gulp.dest('./dist'))
 })
 
-gulp.task('build', ['clean'], next => {
-  runSequence('copy', [
-    'compile:MINA.wxml',
-    'compile:MINA.wxss',
-    'compile:MINA.js',
-    'compile:MINA.json'
-  ], next)
-})
+gulp.task('build', gulp.series(
+  'clean',
+  'copy',
+  'compile:MINA.wxml',
+  'compile:MINA.wxss',
+  'compile:MINA.js',
+  'compile:MINA.json'
+))
 
 ```
 

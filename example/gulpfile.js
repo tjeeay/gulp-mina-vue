@@ -1,6 +1,5 @@
 const gulp = require('gulp')
 const del = require('del')
-const runSequence = require('run-sequence')
 const minaVue = require('../index.js');
 
 gulp.task('clean', _ => del('./dist/**/*.*'))
@@ -29,7 +28,7 @@ gulp.task('compile:MINA.json', _ => {
   .pipe(gulp.dest('./dist'))
 })
 
-gulp.task('copy', [], _ => {
+gulp.task('copy', _ => {
   return gulp.src([
     'src/**/*.*',
     '!src/**/*.vue'
@@ -37,24 +36,25 @@ gulp.task('copy', [], _ => {
   .pipe(gulp.dest('./dist'))
 })
 
-gulp.task('build', ['clean'], next => {
-  runSequence('copy', [
+gulp.task('build', gulp.series(
+  'clean',
+  'copy',
+  'compile:MINA.wxml',
+  'compile:MINA.wxss',
+  'compile:MINA.js',
+  'compile:MINA.json'
+))
+
+gulp.task('watch', _ => {
+  gulp.watch(['./src/**/*.vue'], { interval: 750 }, gulp.series(
     'compile:MINA.wxml',
     'compile:MINA.wxss',
     'compile:MINA.js',
     'compile:MINA.json'
-  ], next)
+  ))
 })
 
-gulp.task('watch', ['build'], _ => {
-  gulp.watch([
-    './src/**/*.vue'
-  ], [
-    'compile:MINA.wxml',
-    'compile:MINA.wxss',
-    'compile:MINA.js',
-    'compile:MINA.json'
-  ])
-})
-
-gulp.task('dev', ['watch'])
+gulp.task('dev', gulp.series(
+  'build',
+  'watch'
+))
