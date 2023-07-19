@@ -1,9 +1,9 @@
 <template>
   <view class="container">
-    
+
     <view class="title">{{title}}</view>
     <view class="desc">{{desc}}</view>
-  
+
     <navigator url="/pages/todo/todo">Todos</navigator>
   </view>
 </template>
@@ -16,7 +16,7 @@ export default Page({
   },
 
   onLoad() {
-    console.log('on page load.')
+    console.log('on page load.', this?.data?.title)
   }
 })
 </script>
